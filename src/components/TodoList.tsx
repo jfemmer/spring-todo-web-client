@@ -22,7 +22,7 @@ class TodoList extends Component<any, TodoListState> {
         await this.loadPage();
     }
 
-    async loadPage(){
+    loadPage = async() => {
         let todos = await getTodos();
         this.setState({todos, loading: false});
     }
