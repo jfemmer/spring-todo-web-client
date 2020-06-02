@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Input, Button, Form, Switch } from 'antd';
 import styles from './styles.module.css'
 import {postTodo} from "../services/todoService";
-import Todo from "../services/Todo";
 
 const layout = {
     labelCol: { span: 8 },
