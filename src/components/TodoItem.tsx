@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Space, Card, Checkbox, Col} from 'antd';
+import {Space, Card, Checkbox, Col, Button} from 'antd';
 import Todo from "../services/Todo";
 import {inspect} from "util";
 import styles from './styles.module.css'
@@ -22,6 +22,7 @@ class TodoItem extends Component<TodoProp> {
                     <p>Description:</p>
                     <p>{this.props.todo.description}</p>
                     <p>Complete: <Checkbox defaultChecked={this.props.todo.complete} disabled/></p>
+                    <Button></Button>
                 </Card>
             </Col>
         );
