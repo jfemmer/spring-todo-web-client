@@ -19,6 +19,10 @@ class TodoList extends Component<any, TodoListState> {
         let todos = await getTodos();
         this.setState({todos, loading: false});
     }
+    loadPage = async () => {
+        let todos = await getTodos()
+        this.setState({todos, loading: false})
+    }
 
     render() {
         return (
@@ -30,7 +34,7 @@ class TodoList extends Component<any, TodoListState> {
                     <>
                         <Space direction="vertical" style={{width: 300}}>
                             {this.state.todos.map((todo: Todo) =>
-                                <TodoItem key={todo.id} todo={todo} />
+                                <TodoItem key={todo.id} todo={todo} reload={this.loadPage}/>
                     )}
                         </Space>
                     </>
@@ -38,6 +42,7 @@ class TodoList extends Component<any, TodoListState> {
             </div>
         );
     }
+
 }
 
 export default TodoList;
