@@ -23,7 +23,7 @@ class TodoList extends Component<any, TodoListState> {
     render() {
         return (
             <div>
-                <h1>Todo List</h1>
+                <h2>This is a todo List</h2>
                 {this.state.loading ?(
                     <h2> Loading...</h2>
                     ) : (
