@@ -59,11 +59,11 @@ class TodoItem extends Component<TodoProp, TodoState> {
 
     render() {
         return (
-            <Col className="gutter-ro" span={6} >
+            <Col className="gutter-ro" span={4} >
                 <Card title={this.props.todo.title} className={styles.todoCard}>
-                    <p>Description:</p>
-                    <p>{this.props.todo.description}</p>
-                    <p>Complete: <Checkbox disabled checked={this.props.todo.complete}/></p>
+                    Description:
+                    <p>{this.props.todo.description}</p><br/>
+                    Complete:<Checkbox disabled checked={this.props.todo.complete}/><br/><br/>
                     <Button type="primary" onClick={this.handleUpdate}>Update</Button>
                     <Button type="primary" danger onClick={this.deleteTodo}>
                         Delete
