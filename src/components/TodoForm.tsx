@@ -30,7 +30,6 @@ const TodoForm = (props: TodoFormInterface) => {
     };
 
     return (
-        <div className="FormInfo">
         <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
             <Form.Item name="title" label="Title" rules={[{required: true}]}>
                 <Input />
@@ -50,7 +49,7 @@ const TodoForm = (props: TodoFormInterface) => {
                 </Button>
             </Form.Item>
         </Form>
-        </div>
+
     );
 }
 
