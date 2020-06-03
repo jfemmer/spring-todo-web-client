@@ -1,19 +1,18 @@
 .button {
     margin-left: 1em;
-
 }
 
 .todoBody{
     text-align: center;
 }
 
-.todoRows{
+.todoRows {
     text-align: center;
 }
 
-.todoCard{
+.todoCard {
     width: 300px;
-    height: 200px;
+    height: 300px;
     margin: 1em 4em;
 }
 
@@ -21,7 +20,3 @@
     color: red;
     font-size: large;
 }
-
-
-
-

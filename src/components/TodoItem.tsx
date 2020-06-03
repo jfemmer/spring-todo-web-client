@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {Card, Checkbox, Col, Button, Modal} from 'antd';
 import Todo from "../services/Todo";
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 import {deleteTodoById} from "../services/todoService";
 import TodoUpdateModal from "./TodoUpdateModal";
-
-
-
 
 interface TodoProp {
     todo: Todo;
@@ -17,53 +14,52 @@ interface TodoState {
     modalVisible: boolean;
     updateModalVisible: boolean;
 }
-
 class TodoItem extends Component<TodoProp, TodoState> {
-    constructor(props: TodoProp){
+    constructor(props: TodoProp) {
         super(props);
         this.state = {
             modalVisible: false,
             updateModalVisible: false,
+
         }
     }
 
     showModal = () => {
         this.setState({
-            modalVisible:true,
+            modalVisible: true,
         });
     };
 
     handleOk = (e: any) => {
         console.log(e);
         this.setState({
-            modalVisible:true,
+            modalVisible: false,
         });
     };
 
     handleUpdate = () => {
         this.setState({
-            updateModalVisible: false
+            updateModalVisible: true
         })
     }
-
     handleCancel = () => {
         this.setState({
-            modalVisible:true,
+            modalVisible: false,
             updateModalVisible: false
         });
     };
 
-    deleteTodo = () =>{
-        if(this.props.todo.id != null && this.props.todo.complete) {
+    deleteTodo = () => {
+        if (this.props.todo.id != null && this.props.todo.complete) {
             deleteTodoById(this.props.todo.id).then(() => this.props.reload());
-        }
-        else {
+        } else {
             this.showModal();
         }
     }
+
     render() {
         return (
-            <Col className="gutter-ro" span={6}>
+            <Col className="gutter-ro" span={6} >
                 <Card title={this.props.todo.title} className={styles.todoCard}>
                     <p>Description:</p>
                     <p>{this.props.todo.description}</p>
@@ -78,13 +74,12 @@ class TodoItem extends Component<TodoProp, TodoState> {
                         onOk={this.handleOk}
                         onCancel={this.handleCancel}
                     >
-                        <p className={styles.dangerDeleteTodo}>In order to delete a Todo it MUST be complete.</p>
+                        <p className={styles.dangerDeleteTodo}>In order to delete a todo, it MUST be completed!</p>
                     </Modal>
                     <TodoUpdateModal visible={this.state.updateModalVisible}
                                      todo={this.props.todo}
                                      onCancel={this.handleCancel}
-                                     reload={this.props.reload}
-                        />
+                                     reload={this.props.reload}/>
                 </Card>
             </Col>
         );
