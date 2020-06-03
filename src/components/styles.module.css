@@ -1,5 +1,6 @@
 .button {
     margin-left: 1em;
+    font-family: Apple;
 }
 
 .todoBody{
@@ -19,4 +20,21 @@
 .dangerDeleteTodo{
     color: red;
     font-size: large;
+}
+
+h1{
+    color: dodgerblue;
+    font-family: Noto;
+    font-weight: bolder;
+}
+
+body{
+    background-color: beige;
+}
+
+.todoCard p{
+
+    font-weight: bold;
+    font-size: small;
+    font-family: Noto;
 }
