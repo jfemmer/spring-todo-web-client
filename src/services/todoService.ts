@@ -45,7 +45,7 @@ export const updateTodoById = async (todo: Todo) => {
 
 export const deleteTodoById = async (id: number) => {
     try{
-        let response = await axios.post(`${base_url}/${id}`);
+        let response = await axios.delete(`${base_url}/${id}`);
         console.log("Response", response);
     }
     catch (error) {
